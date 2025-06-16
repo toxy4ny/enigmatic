@@ -1,0 +1,31 @@
+default_delay: 1.0
+http_timeout: 30
+max_redirects: 5
+
+user_agents:
+  - "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+  - "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36"
+  - "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36"
+
+profiles:
+  stealth:
+    delay: 3.0
+    methods: ['unicode_fullwidth', 'unicode_circles', 'punycode']
+    
+  aggressive:
+    delay: 0.5
+    methods: 'all'
+    
+  targeted:
+    delay: 1.5
+    methods: ['single_decimal', 'full_hex', 'compressed']
+
+burp_integration:
+  enabled: false
+  host: "127.0.0.1"
+  port: 8080
+  api_key: null
+
+dns_settings:
+  timeout: 5
+  nameservers: ['8.8.8.8', '1.1.1.1']
